@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { IPlanetCreate } from '../types/planet.type';
 import { fetchOne ,updatePlanet } from '../services/apiService';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 const UpdateForm = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [planet, setPlanet] = useState<IPlanetCreate>({
     name: '',
     rotation_period: '',
@@ -58,6 +59,7 @@ const UpdateForm = () => {
     
     if (id) {
         await updatePlanet(id, planet);
+        navigate('/');
     }
   };
 
