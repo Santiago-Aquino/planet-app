@@ -44,7 +44,7 @@ Una vez instaladas las dependencias, para levantar el projecto debe correr:
 npm run dev
 ```
 
-Por ultimo, vaya al siguiente link en su navegador para ver la documentación:
+Por ultimo, vaya al siguiente link en su navegador:
 
 http://localhost:5173
 
