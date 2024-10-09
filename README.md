@@ -59,6 +59,6 @@ Para este proyecto se necesitan variables de entorno tanto en el frontend como e
 
 ## Deploy
 
-Frontend:
+Frontend: https://planet-app-six.vercel.app/
 
-Backend: 
+Backend: https://planet-app-wuhi.onrender.com/docs
