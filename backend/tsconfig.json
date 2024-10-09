@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+     "rootDir": "./src",
+     "baseUrl": "./src",
+     "paths": {
+      "@/*": ["./src/*"],
+      "@config/*": ["./config/*"],
+      "@controllers/*": ["./controllers/*"],
+      "@database/*": ["./database/*"],
+      "@interfaces/*": ["./interfaces/*"],
+      "@middlewares/*": ["./middlewares/*"],
+      "@dao/*": ["./dao/*"],
+      "@routes/*": ["./routes/*"],
+      "@handlers/*": ["./handlers/*"],
+      "@services/*": ["./services/*"],
+      "@utils/*": ["./utils/*"]
+     },
+     "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+     "noImplicitAny": true,
+     "strictFunctionTypes": true,
+    "skipLibCheck": true
+  }
+}

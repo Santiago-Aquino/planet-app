@@ -1,0 +1,244 @@
+paths:
+  /planet:
+    get:
+      summary: Get all planets
+      tags:
+        - Planet
+      parameters:
+      - in: query
+        name: field
+        schema:
+          type: string
+        description: The field to order the planets by (e.g., name, population, etc.)
+        example: "name"
+      - in: query
+        name: order
+        schema:
+          type: string
+          enum: [asc, desc]
+        description: The order direction (ascending or descending)
+        example: "asc"
+      - in: query
+        name: page
+        schema:
+          type: string
+        description: The page number for pagination
+        example: "1"
+      - in: query
+        name: limit
+        schema:
+          type: string
+        description: The maximum number of results per page
+        example: "4"
+      responses:
+        200:
+          description: Returns a list of planets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Planet'
+    post:
+      summary: Create a new planet
+      tags:
+        - Planet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanetCreate'
+      responses:
+        201:
+          description: Planet created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Planet'
+        400:
+          description: Bad request
+
+  /planet/{id}:
+    get:
+      summary: Get a planet by ID
+      tags:
+        - Planet
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID of the planet to get
+      responses:
+        200:
+          description: Returns a single planet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Planet'
+        404:
+          description: Planet not found
+
+    put:
+      summary: Update a planet by ID
+      tags:
+        - Planet
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID of the planet to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanetUpdate'
+      responses:
+        200:
+          description: Planet updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Planet'
+        404:
+          description: Planet not found
+
+    delete:
+      summary: Delete a planet by ID
+      tags:
+        - Planet
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID of the planet to delete
+      responses:
+        204:
+          description: Planet deleted successfully
+        404:
+          description: Planet not found
+
+components:
+  schemas:
+    Planet:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "614b1c99c29f3b1b0a598e42"
+        name:
+          type: string
+          example: "Tatooine"
+        rotation_period:
+          type: string
+          example: "23"
+        orbital_period:
+          type: string
+          example: "304"
+        diameter:
+          type: string
+          example: "10465"
+        climate:
+          type: string
+          example: "arid"
+        gravity:
+          type: string
+          example: "1 standard"
+        terrain:
+          type: string
+          example: "desert"
+        surface_water:
+          type: string
+          example: "1"
+        population:
+          type: string
+          example: "200000"
+        url:
+          type: string
+          example: "https://swapi.dev/api/planets/1/"
+
+    PlanetCreate:
+      type: object
+      required:
+        - name
+        - rotation_period
+        - orbital_period
+        - diameter
+        - climate
+        - gravity
+        - terrain
+        - surface_water
+        - population
+        - url
+      properties:
+        name:
+          type: string
+          example: "Tatooine"
+        rotation_period:
+          type: string
+          example: "23"
+        orbital_period:
+          type: string
+          example: "304"
+        diameter:
+          type: string
+          example: "10465"
+        climate:
+          type: string
+          example: "arid"
+        gravity:
+          type: string
+          example: "1 standard"
+        terrain:
+          type: string
+          example: "desert"
+        surface_water:
+          type: string
+          example: "1"
+        population:
+          type: string
+          example: "200000"
+        url:
+          type: string
+          example: "https://swapi.dev/api/planets/1/"
+
+    PlanetUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Tatooine"
+        rotation_period:
+          type: string
+          example: "23"
+        orbital_period:
+          type: string
+          example: "304"
+        diameter:
+          type: string
+          example: "10465"
+        climate:
+          type: string
+          example: "arid"
+        gravity:
+          type: string
+          example: "1 standard"
+        terrain:
+          type: string
+          example: "desert"
+        surface_water:
+          type: string
+          example: "1"
+        population:
+          type: string
+          example: "200000"
+        url:
+          type: string
+          example: "https://swapi.dev/api/planets/1/"
