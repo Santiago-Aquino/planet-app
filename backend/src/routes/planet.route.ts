@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { createValidator, idValidator, updateValidator, getValidator } from "@utils/validator";
+import { createValidator, idValidator, updateValidator, getValidator } from "../utils/validator";
 import {
     getAllPlanetsHandler,
     getPlanetHandler,
     createPlanetHanlder,
     updatePlanetHanlder,
     deletePlanetHandler
-} from "@handlers/planet.handler";
+} from "../handlers/planet.handler";
 
 const router = Router();
 

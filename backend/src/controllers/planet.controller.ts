@@ -1,7 +1,7 @@
-import PlanetService from "@dao/services/mongo/planet.service";
-import { OrderField } from "types/enums/order-field.enum";
-import { Order } from "types/enums/order.enum";
-import { IPlanetEntity } from "types/planet.type";
+import PlanetService from "../dao/services/mongo/planet.service";
+import { OrderField } from "../types/enums/order-field.enum";
+import { Order } from "../types/enums/order.enum";
+import { IPlanetEntity } from "../types/planet.type";
 
 
 const planetService = new PlanetService();

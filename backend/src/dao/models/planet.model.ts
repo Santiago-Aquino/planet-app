@@ -1,6 +1,6 @@
 import mongoose, { PaginateModel } from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate-v2';
-import { IPlanetEntity } from 'types/planet.type';
+import { IPlanetEntity } from '../../types/planet.type';
 
 const Schema = mongoose.Schema;
 

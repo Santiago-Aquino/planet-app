@@ -1,5 +1,5 @@
-import { OrderField } from "types/enums/order-field.enum";
-import { Order } from "types/enums/order.enum";
+import { OrderField } from "../types/enums/order-field.enum";
+import { Order } from "../types/enums/order.enum";
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
 import {
@@ -8,7 +8,7 @@ import {
     getPlanetController,
     updatePlanetController,
     deletePlanetController
-} from "@controllers/planet.controller";
+} from "../controllers/planet.controller";
 
 const getAllPlanetsHandler = async (req: Request, res: Response) => {
     try {

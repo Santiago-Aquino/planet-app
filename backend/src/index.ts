@@ -1,11 +1,11 @@
 import express from "express";
 import cors from 'cors';
-import config from '@config/global-vars'
-import { connectDB } from "@database/database";
-import { router } from "@routes/index.route";
+import config from './config/global-vars'
+import { connectDB } from "./database/database";
+import { router } from "./routes/index.route";
 import swaggerJSDoc, { Options } from "swagger-jsdoc";
 import swaggerUiExpress from "swagger-ui-express";
-import { ApiService } from "@services/planet.service";
+import { ApiService } from "./services/planet.service";
 
 const apiService = new ApiService();
 const app = express();

@@ -1,3 +1,3 @@
-import { IPlanet } from "types/interfaces/planet.interface"
+import { IPlanet } from "./interfaces/planet.interface"
 
 export type IPlanetEntity =  Omit<IPlanet, 'edited' | 'created' | 'films' | 'residents'>

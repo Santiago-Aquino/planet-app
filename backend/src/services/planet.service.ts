@@ -1,7 +1,7 @@
-import { IPlanetResponse } from "types/interfaces/planet.interface";
-import config from '@config/global-vars'
-import PlanetService from "@dao/services/mongo/planet.service";
-import { IPlanetEntity } from "types/planet.type";
+import { IPlanetResponse } from "../types/interfaces/planet.interface";
+import config from '../config/global-vars'
+import PlanetService from "../dao/services/mongo/planet.service";
+import { IPlanetEntity } from "../types/planet.type";
 
 export class ApiService {
   private baseURL: string;

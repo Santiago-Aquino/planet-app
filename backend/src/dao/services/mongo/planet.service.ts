@@ -1,8 +1,8 @@
-import PlanetModel from "@dao/models/planet.model";
-import { Order } from "types/enums/order.enum";
-import { IPlanetEntity } from "types/planet.type";
+import PlanetModel from "../../models/planet.model";
+import { Order } from "../../../types/enums/order.enum";
+import { IPlanetEntity } from "../../../types/planet.type";
 import { SortOrder } from "mongoose";
-import { OrderField } from "types/enums/order-field.enum";
+import { OrderField } from "../../../types/enums/order-field.enum";
 
 export default class PlanetService {
 
