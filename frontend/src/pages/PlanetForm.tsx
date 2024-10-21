@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { IPlanetCreate } from '../types/planet.type';
 import { createPlanet } from '../services/apiService';
+import { useNavigate } from 'react-router-dom';
 
 
 const PlanetForm = () => {
+  const navigate = useNavigate();
   const [planet, setPlanet] = useState<IPlanetCreate>({
     name: '',
     rotation_period: '',
@@ -26,8 +28,12 @@ const PlanetForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    await createPlanet(planet);
+    try {
+        await createPlanet(planet);
+        navigate('/');
+    } catch(err) {
+        console.log(`Me fallo el boton ${err}`)
+    }
   };
 
   return (
